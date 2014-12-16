@@ -1,9 +1,3 @@
-<html>
-
-<head>
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-</head>
-<body>
 <h2>Intro</h2>
 <p>
 Singleton pattern is to have only one instance for a class. One of the most important reason to use singleton pattern is to save memory. For example, in a system there should be only one window manager. Singletons is good at providing a centralized management system for internal or external resources. 
@@ -28,7 +22,7 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 
 <h2>Implementation</h2>
 
-<pre class="prettyprint">
+<pre>
 	public class Singleton
 	{
 		private static Singleton instance;
@@ -44,5 +38,3 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 		}
 	}	
 </pre>
-</body>
-</html>
