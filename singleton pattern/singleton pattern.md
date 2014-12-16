@@ -23,18 +23,19 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 <h2>Implementation</h2>
 
 <pre>
-	public class Singleton
-	{
-		private static Singleton instance;
+	`public class Singleton
+	`{
+	``private static Singleton instance;
 
-		private Singleton(){}
+	``private Singleton(){}
 
-		public static synchronized Singleton getInstance(){
-			if(instance = null)
-			{
-				instance = new Singleton();
-			}
-			return instance;
-		}
-	}	
+	``public static synchronized Singleton getInstance()
+	``{
+	```if(instance = null)
+	```{
+	````instance = new Singleton();
+	```}
+	```return instance;
+	``}
+	``}	
 </pre>
