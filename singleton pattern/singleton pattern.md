@@ -1,0 +1,21 @@
+<h2>Intro</h2>
+<p>
+Singleton pattern is to have only one instance for a class. One of the most important reason to use singleton pattern is to save memory. For example, in a system there should be only one window manager. Singletons is good at providing a centralized management system for internal or external resources. 
+<p>
+
+	
+<h2>Description</h2>
+
+<p>The class can create no more than one instace. All the programs want to access the instance will use the same reference.</p>
+
+
+<h2>Intent</h2>
+<ul>
+	<li>No more than one instance should be created globally,</li>
+	<li>Provide a global access point. 
+</ul>
+
+
+<h2>UML</h2>
+ <img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px">
+
