@@ -21,7 +21,7 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 
 
 <h2>Implementation</h2>
-
+<h3>Java</h3>
 <pre>
 	public class Singleton
 	{
