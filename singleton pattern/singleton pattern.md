@@ -22,8 +22,7 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 
 <h2>Implementation</h2>
 
-
-	```java
+<pre>
 	public class Singleton
 	{
 		private static Singleton instance;
@@ -39,4 +38,4 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 			return instance;
 		}	
 	}
-	```
+</pre>	
