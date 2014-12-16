@@ -43,8 +43,9 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 </pre>	
 
 <h3>Go</h3>
+<p> example from <a href="http://stackoverflow.com/questions/1823286/singleton-in-go">stackoverflow</a></p>
+
 <pre>
-	// example from <a href="http://stackoverflow.com/questions/1823286/singleton-in-go"> stackoverflow</a>
 	package singleton
 	
 	type singleton struct {
