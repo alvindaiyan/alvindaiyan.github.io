@@ -19,3 +19,23 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 <h2>UML</h2>
  <img src="https://github.com/alvindaiyan/learnDesignPattern/blob/master/singleton%20pattern/singleton%20diagram.png" alt="singleton img" />
 
+
+<h2>Implementation</h2>
+
+<pre>
+	public class Singleton
+	{
+		private static Singleton instance;
+
+		private Singleton(){}
+
+		public static synchronized Singleton getInstance(){
+			if(instance = null)
+			{
+				instance = new Singleton();
+			}
+			return instance;
+		}
+
+	}
+</pre>
