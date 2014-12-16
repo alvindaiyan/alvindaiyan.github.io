@@ -29,6 +29,8 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 
 		private Singleton(){}
 
+		 // synchronized keyword is important since 
+		 // it can help avoid multiple threads create different instance at same time
 		public static synchronized Singleton getInstance()
 		{
 			if(instance = null)
@@ -39,3 +41,24 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 		}	
 	}
 </pre>	
+
+<h3>Go</h3>
+<pre>
+	// example from <a href="http://stackoverflow.com/questions/1823286/singleton-in-go"> stackoverflow</a>
+	package singleton
+	
+	type singleton struct {
+		O interface{}
+	}
+	
+	var instantiated *single = nil // private instance of singleton
+	
+	func New() *single {
+		if instantiated == nil {
+			instantiated = new(single)
+		}
+		return instantiated
+	}
+	
+	
+</pre>
