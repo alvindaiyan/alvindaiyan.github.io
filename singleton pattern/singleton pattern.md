@@ -41,6 +41,9 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 		}	
 	}
 </pre>	
+<p>
+The implementations above in Java should be robust for any situtation. However, synnchronize a function is expensive. 
+</p>
 
 <h3>Go</h3>
 <p> example from <a href="http://stackoverflow.com/questions/1823286/singleton-in-go">stackoverflow</a></p>
