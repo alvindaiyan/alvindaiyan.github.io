@@ -17,5 +17,5 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 
 
 <h2>UML</h2>
- <img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px">
+ <img src="https://github.com/alvindaiyan/learnDesignPattern/blob/master/singleton%20pattern/singleton%20diagram.png" alt="singleton img" />
 
