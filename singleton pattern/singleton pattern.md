@@ -50,19 +50,20 @@ The implementations above in Java should be robust for any situtation. However, 
 
 <pre>
 	package singleton
-	
-	type singleton struct {
-		O interface{}
-	}
-	
-	var instantiated *single = nil // private instance of singleton
-	
-	func New() *single {
+
+	import "sync"
+
+	type singleton struct {}
+
+	var instance *singleton
+	var once sync.Once
+
+	func New() *singleton {
 		if instantiated == nil {
-			instantiated = new(single)
+			once.Do(func() {		
+				instantiated = new(single)		
+			})
 		}
 		return instantiated
 	}
-	
-	
 </pre>
