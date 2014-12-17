@@ -68,5 +68,5 @@ The implementations above in Java should be robust for any situtation. However, 
 	}
 </pre>
 <p>
-The above code is an implementation of Singleton Pattern in Go. However, Go is not a class-based OO language. Singleton pattern is less useful for Go compared with Java.
+The above code is an implementation of Singleton Pattern in Go. However, since Go is not a class-based OO language, most of the classic OO design patterns are awkward to translate into Go. Therefore, Singleton pattern is less useful for Go compared with Java.
 </p>
