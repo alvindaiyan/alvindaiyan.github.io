@@ -1,4 +1,4 @@
-<h2>Intro</h2>
+<h2>Introduction</h2>
 <p>
 Singleton pattern is to have only one instance for a class. One of the most important reason to use singleton pattern is to save memory. For example, in a system there should be only one window manager. Singletons is good at providing a centralized management system for internal or external resources. 
 <p>
@@ -29,6 +29,8 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 
 		private Singleton(){}
 
+		 // synchronized keyword is important since 
+		 // it can help avoid multiple threads create different instance at same time
 		public static synchronized Singleton getInstance()
 		{
 			if(instance = null)
@@ -39,3 +41,32 @@ Singleton pattern is to have only one instance for a class. One of the most impo
 		}	
 	}
 </pre>	
+<p>
+The implementations above in Java should be robust for any situtation. However, synnchronize a function is expensive. 
+</p>
+
+<h3>Go</h3>
+<p> example from <a href="http://stackoverflow.com/questions/1823286/singleton-in-go">stackoverflow</a></p>
+
+<pre>
+	package singleton
+
+	import "sync"
+
+	type singleton struct {}
+
+	var instance *singleton
+	var once sync.Once
+
+	func New() *singleton {
+		if instantiated == nil {
+			once.Do(func() {		
+				instantiated = new(single)		
+			})
+		}
+		return instantiated
+	}
+</pre>
+<p>
+The above code is an implementation of Singleton Pattern in Go. However, since Go is not a class-based OO language, most of the classic OO design patterns are awkward to translate into Go. Therefore, Singleton pattern is less useful for Go compared with Java.
+</p>
