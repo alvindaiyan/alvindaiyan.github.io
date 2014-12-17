@@ -11,5 +11,5 @@ Encapsulation is one of the most useful features in an OO program language such 
 <p></p>
 
 <h2>UML</h2>
- <img src="https://github.com/alvindaiyan/learnDesignPattern/blob/master/factory%20pattern/factory%20diagram.png" alt="singleton img" />
+ <img src="https://github.com/alvindaiyan/learnDesignPattern/blob/master/factory%20pattern/factory%20diagram.png" alt="factory img" />
 
