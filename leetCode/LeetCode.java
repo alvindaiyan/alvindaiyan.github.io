@@ -1,4 +1,5 @@
 public class LeetCode{
+	// 172
 	public static int trailingZeroes(int n) {      
         int res = 0;
 
@@ -12,6 +13,7 @@ public class LeetCode{
         return res;
     }
 
+    // 6
     public static String convert(String s, int nRows) {
         if(nRows == 1 || s.length() <= nRows)
         {
@@ -59,6 +61,7 @@ public class LeetCode{
         return rel.toString();
     }
 
+    // 136
     public int singleNumber(int[] A) {
         int result = 0; 
         for (int i : A) result ^= i ; 
