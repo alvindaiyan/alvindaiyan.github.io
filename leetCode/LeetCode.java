@@ -65,10 +65,46 @@ public class LeetCode{
             return result ; 
     } 
 
+
+    // countAndSay
+    public static String countAndSay(int n) {
+        if( n == 1) return "1";
+        else if( n == 2) return countAndSayRecr(countAndSay(n - 1));
+        else return countAndSayRecr(countAndSay(n - 1));
+    }
+
+    public static String countAndSayRecr(String n) {
+        java.lang.StringBuilder sb = new StringBuilder();        
+        String s = n + "";
+        int count = 1;
+        char pre = s.charAt(0);
+        for (int i = 1; i <= s.length(); i++)
+        {
+            if(i >= s.length() || pre != s.charAt(i))
+            {
+                sb.append(count).append(pre);
+
+                if (i < s.length()) 
+                {
+                    pre = s.charAt(i);
+                }
+                count = 1;
+            }
+            else 
+            {
+                count++;
+            }
+        }
+
+        return sb.toString();        
+    }
+
+
     public static void main(String[] arg)
     {
-        int[] x = {1,0,1};
-        System.out.println("result = " + singleNumber(x));
+        // int[] x = {1,0,1};
+        // System.out.println("result = " + singleNumber(x));
 
+        System.out.println( Integer.MAX_VALUE );
     }
 }
