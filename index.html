@@ -14,6 +14,8 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
+        tags: <span class="label label-primary">{{ post.categories }}</span>
+        <hr width= 30%/>
         {{ post.excerpt }}
 
       {% assign foundImage = 0 %}
@@ -23,7 +25,7 @@ layout: default
 
             {% if foundImage == 0 %}
                 {% assign html = image | split:"/>" | first %}
-                <img {{ html }} />
+                <img width=20% height=20% {{ html }} />
                 {% assign foundImage = 1 %}
             {% endif %}
         {% endif %}
@@ -32,9 +34,7 @@ layout: default
       <hr/>
       </li>
     {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  </ul> 
 
 <!-- </div> -->
 </div>

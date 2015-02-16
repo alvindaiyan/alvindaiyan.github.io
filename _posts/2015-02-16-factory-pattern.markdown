@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Factory Pattern Learning"
-date:   2015-02-16 12:12:25
+date:   2015-02-16 15:12:25
 categories: design pattern
 ---
 
