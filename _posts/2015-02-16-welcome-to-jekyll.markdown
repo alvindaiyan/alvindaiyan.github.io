@@ -1,21 +1,27 @@
 ---
 layout: post
-title:  "Factory Pattern Learning"
+title:  "Welcome to My Blog!"
 date:   2015-02-16 12:12:25
-categories: jekyll update
+categories: General
 ---
-# Introduction
+You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Encapsulation is one of the most useful features in an OO program language such as Java and C++. We can encapsulate platform dependencies such as window system, operating system, database, etc. Since there is no such method at programming language level, people invent the Factory Pattern (or Abstract Factory Pattern) to create related objects without directly specifying the concrete classes. From my understanding, factory pattern is a collection of methods to create related objects. 
+To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
+Jekyll also offers powerful support for code snippets:
 
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
 
-# Description
+Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
 
+[jekyll]:      http://jekyllrb.com
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-help]: https://github.com/jekyll/jekyll-help
 
-##Intent
-
-
-##UML
- ![Image of Factory Pattern]({{ site.url }}/assets/factory%20pattern.png)
 
