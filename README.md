@@ -4,3 +4,11 @@ Some of my readings and learnings.
 *  Software Architecture Principles
 *  JVM Learnings
 *  Leet Code Solutions
+
+# Tags:
+*  design_pattern
+*  general
+*  java
+*  go
+*  algorithm
+
