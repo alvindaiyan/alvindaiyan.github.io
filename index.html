@@ -14,7 +14,25 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
-        tags: <span class="label label-primary">{{ post.categories }}</span>
+        {% assign tag_color = 'label label-primary' %}
+        
+        {% if post.categories contains 'design_pattern' %}
+          {% assign tag_color = 'label label-danger' %}
+        {% endif%}
+
+        {% if post.categories contains 'go' %}
+          {% assign tag_color = 'label label-info' %}
+        {% endif%}
+
+        {% if post.categories contains 'java' %}
+          {% assign tag_color = 'label label-warning' %}
+        {% endif%}
+
+        {% if post.categories contains 'algorithm' %}
+          {% assign tag_color = 'label label-success' %}
+        {% endif%}
+
+        tags: <span class='{{tag_color}}'>{{ post.categories }}</span>
         <hr width= 30%/>
         {{ post.excerpt }}
 
