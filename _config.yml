@@ -1,18 +1,3 @@
-# safe: true
-# # Site settings
-# title: Yan's Blog
-# email: alvindaiyan@gmail.com
-
-# baseurl: "" # the subpath of your site, e.g. /blog/
-# # url: "http://yourdomain.com" # the base hostname & protocol for your site
-# # twitter_username: jekyllrb
-# github_username:  alvindaiyan
-# # email: alvindaiyan@gmail.com
-# # linkedin: nz.linkedin.com/pub/yan-dai/49/99a/4b8/en
-# # Build settings
-# markdown: kramdown
-
-
 safe: true
 lsi: false
 # pygments: true
@@ -31,7 +16,7 @@ kramdown:
 #port: 2106
 #baseurl: /project-name
 name: alvindaiyan.github.io
-# timezone:    Aisa/NewZealand
+timezone:    Aisa/NewZealand
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 title : Yan's Learning
