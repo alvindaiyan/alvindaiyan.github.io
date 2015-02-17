@@ -2,6 +2,7 @@
 layout: post
 title:  "Package Control not showing"
 date:   2015-02-18 10:31:00
+comments: true
 categories: general
 ---
 Yesterday, when I am using my sublime and trying to install a new package, I experience an terrible issue. That is my package control is not showing in the list when I press `ctrl + shift + p`. I tried remove the `control.sublime` from both Pristine Packages and Installed Packages folder. But this is not solving my problem. 
