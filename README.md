@@ -12,3 +12,6 @@ Some of my readings and learnings.
 *  go
 *  algorithm
 
+
+want to write:
+ go: when using gorountine: param better to be isolated
