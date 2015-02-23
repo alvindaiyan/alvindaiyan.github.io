@@ -8,6 +8,8 @@ categories: general
 
 Sometimes, you have to delete some of the history of your repository in your github. Some reason like, you have some confidential detail negligently submitted into your public repository (e.g. personal password). Then you cannot just update the file because these detail is still available to others by viewing your file history. 
 
+![github]({{ site.url }}/assets/github.png)
+
 The way to delete these history is:
 
 - go to your git hub, settings -> delete repository.
