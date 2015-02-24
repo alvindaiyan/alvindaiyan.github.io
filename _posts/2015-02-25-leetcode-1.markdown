@@ -8,7 +8,7 @@ categories: algorithm
 Recently, when I played on LeetCode.com, there is a solution for a question is really beautiful. 
 In this post, I want to present this solution.
 
-The [question]() is:
+The [question](https://oj.leetcode.com/problems/single-number/) is:
 
 ![leetcode]({{ site.url }}/assets/leetcode.png)
 
