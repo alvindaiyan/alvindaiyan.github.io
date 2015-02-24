@@ -10,6 +10,8 @@ Parsing html document is one of very useful feature for web crawler when you onl
 As my computer still using go 1.3.1, there is no such library. So I have to install the library manually by (run by command line):
 
 ``` go get golang.org/x/net/html ```
+
+Now, lets get a html parse object in go.
  
 1. **Read the file.** Depending on the source, there are many different ways. In this post, I will use the html from Internet. What you need to do is to download the page by: 
 
