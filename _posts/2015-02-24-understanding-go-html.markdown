@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Simple Use of Go html parser"
+title:  "Simple Tutorial of Go html parser"
 date:   2015-02-24 14:21:00
 categories: go
 ---
