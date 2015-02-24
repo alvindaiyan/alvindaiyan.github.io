@@ -7,6 +7,9 @@ categories: go
 
 Parsing html document is one of very useful feature for web crawler when you only need crawl a specific element content on the web page. In go 1.4.0, a html parser in [golang.org/x/net/html](https://godoc.org/golang.org/x/net/html). In this post, I will state how to use the "html" library to parse a html document.
 
+
+![github]({{ site.url }}/assets/gohtml.jpg)
+
 As my computer still using go 1.3.1, there is no such library. So I have to install the library manually by (run by command line):
 
 ``` go get golang.org/x/net/html ```

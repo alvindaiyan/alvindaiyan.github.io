@@ -7,6 +7,8 @@ categories: java
 
 I will introduce how to use a simple Java program to parse a XML document.
 
+![github]({{ site.url }}/assets/DOM-to-XML.png)
+
 A given XML document [test.xml](http://www.w3schools.com/xml/note.xml):	
 
 {% highlight xml %}
