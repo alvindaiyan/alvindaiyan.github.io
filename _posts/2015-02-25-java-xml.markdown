@@ -1,0 +1,143 @@
+---
+layout: post
+title:  "Using Java to parse XML document"
+date:   2015-02-25 09:21:00
+categories: java
+---
+
+I will introduce how to use a simple Java program to parse a XML document.
+
+A given XML document [test.xml](http://www.w3schools.com/xml/note.xml):	
+
+{% highlight xml %}
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+	<to>Tove</to>
+	<from>Jani</from>
+	<heading>Reminder</heading>
+	<body>Don't forget me this weekend!</body>
+</note>
+{% endhighlight %}
+
+To parse a XML file using Java, we need two Java libraries, the org.w3c.dom and javax.xml.parsers. There are _ steps to do
+
+- ***Read the xml file to a ```org.w3c.dom.Document```***:
+
+{% highlight java %}
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+
+import org.w3c.dom.Document;
+
+import java.io.File;
+
+...
+
+File fXmlFile = new File("/path/to/test.xml");
+DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+Document doc = dBuilder.parse(fXmlFile);
+
+...
+
+{% endhighlight %}
+
+
+Now, we get a ```doc``` object for performing our xml parsing task.
+
+- ***We need to normalise the document by:***
+
+{% highlight java %}
+...
+doc.getDocumentElement().normalize();
+...
+{% endhighlight %}
+
+The normalise method has the following comments in the library:
+
+{% highlight java %}
+
+    /**
+     *  Puts all <code>Text</code> nodes in the full depth of the sub-tree
+     * underneath this <code>Node</code>, including attribute nodes, into a
+     * "normal" form where only structure (e.g., elements, comments,
+     * processing instructions, CDATA sections, and entity references)
+     * separates <code>Text</code> nodes, i.e., there are neither adjacent
+     * <code>Text</code> nodes nor empty <code>Text</code> nodes. This can
+     * be used to ensure that the DOM view of a document is the same as if
+     * it were saved and re-loaded, and is useful when operations (such as
+     * XPointer [<a href='http://www.w3.org/TR/2003/REC-xptr-framework-20030325/'>XPointer</a>]
+     *  lookups) that depend on a particular document tree structure are to
+     * be used. If the parameter "normalize-characters" of the
+     * <code>DOMConfiguration</code> object attached to the
+     * <code>Node.ownerDocument</code> is <code>true</code>, this method
+     * will also fully normalize the characters of the <code>Text</code>
+     * nodes.
+     * <p ><b>Note:</b> In cases where the document contains
+     * <code>CDATASections</code>, the normalize operation alone may not be
+     * sufficient, since XPointers do not differentiate between
+     * <code>Text</code> nodes and <code>CDATASection</code> nodes.
+     *
+     * @since DOM Level 3
+     */
+    public void normalize();
+{% endhighlight %}
+
+What this actually means is that it will help you normalise all the text node. For example, if you have a node like:
+
+{% highlight xml %}
+
+<foo>I 
+am
+a
+Node</foo>
+
+{% endhighlight %}
+
+Before you get your document normalised, it can be represent by:
+
+
+{% highlight java %}
+Element foo
+  Text node: "I "
+  Text node: "am "  
+  Text node: "a "
+  Text node: "Node"
+{% endhighlight %}
+
+
+After you normalise the doc, it is:
+
+{% highlight java %}
+Element foo
+  Text node: "I am a Node"
+{% endhighlight %}
+
+From now on, you can search or perform other tasks against your ```doc``` object.
+
+- ***Get a list of targeted Node.*** This can be done by calling the method ```getElementsByTagName(String tagName)```. For example, when we want all the note element in our test.xml and iterate through each one:
+
+{% highlight java %}
+
+NodeList nList = doc.getElementsByTagName("note");
+
+for (int temp = 0; temp < nList.getLength(); temp++) {
+	Node nNode = nList.item(temp);
+	if (nNode.getNodeType() == Node.Element_Node) {
+		Element eElement = (Element) nNode; // cast to Element
+		if (eElement.getAttribute("heading") != null) {
+			System.out.println("heading: " + eElement.getAttribute("heading"));
+		}
+	}
+}
+{% endhighlight %}
+
+
+
+
+
+
+
+
+
