@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "Record a Best Solution"
+date:   2015-02-25 09:21:00
+categories: algorithm
+---
+
+Recently, when I played on LeetCode.com, there is a solution for a question is really beautiful. 
+In this post, I want to present this solution.
+
+The [question]() is:
+
+![leetcode]({{ site.url }}/assets/leetcode.png)
+
+The solution is: 
+
+{% highlight java %}
+public int singleNumber(int[] A) {
+    int result = 0; 
+    for (int i : A) result ^= i ; 
+    return result ; 
+} 
+{% endhighlight %}
+
