@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Understanding https"
+title:  "Understanding Https"
 date:   2015-02-27 10:00:00
 categories: general
 ---
