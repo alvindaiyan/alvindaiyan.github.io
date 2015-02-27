@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A Simple Goroutine line Java Implementation "
+title:  "A Simple Goroutine Like Java Implementation "
 date:   2015-02-27 16:00:00
 categories: java
 ---
