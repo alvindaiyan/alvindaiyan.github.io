@@ -1,19 +1,22 @@
 ---
 layout: default
 ---
+
+
 <div class="home">
 <!-- <div class="container theme-showcase" role="main"> -->
-
   <h1 class="page-heading">Posts</h1>
 
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <div class="panel panel-default">
 
-        <h2>
+        
+          <div class="panel-heading">
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+          </div>
         {% assign tag_color = 'label label-primary' %}
         
         {% if post.categories contains 'design_pattern' %}
@@ -31,11 +34,12 @@ layout: default
         {% if post.categories contains 'algorithm' %}
           {% assign tag_color = 'label label-success' %}
         {% endif%}
-
+        <div class="panel-body">
         tags: <span class='{{tag_color}}'>{{ post.categories }}</span>
         <hr width= 30%/>
-        {{ post.excerpt }}
 
+        {{ post.excerpt }}
+      
       {% assign foundImage = 0 %}
       {% assign images = post.content | split:"<img " %}
       {% for image in images %}
@@ -47,9 +51,11 @@ layout: default
                 {% assign foundImage = 1 %}
             {% endif %}
         {% endif %}
-      {% endfor %} 
+      {% endfor %}
+      </div> 
       <br/><br/>
       <hr/>
+    </div>
       </li>
     {% endfor %}
   </ul> 

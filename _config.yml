@@ -3,7 +3,6 @@ lsi: false
 # pygments: true
 simple_search: http://google.com/search
 markdown: kramdown
-paginate: 10
 kramdown:
   extensions:
     - autolink
