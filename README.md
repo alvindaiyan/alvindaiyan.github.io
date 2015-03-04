@@ -1,6 +1,6 @@
 # Reading-Notes
 Some of my readings and learnings.
-*  Design Pattern
+*  Design Pattern: learning design patterns with JDK
 *  Software Architecture Principles
 *  JVM Learnings
 *  Leet Code Solutions
