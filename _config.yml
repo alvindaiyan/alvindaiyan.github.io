@@ -2,6 +2,8 @@ safe: true
 lsi: false
 # pygments: true
 simple_search: http://google.com/search
+paginate: 5
+paginate_path: "/_post/page:num/"
 markdown: kramdown
 kramdown:
   extensions:
