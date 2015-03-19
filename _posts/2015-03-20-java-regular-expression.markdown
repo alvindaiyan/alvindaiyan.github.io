@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Using Java Regular Expression"
-date:   2015-03-20 10:00:00
+date:   2015-03-23 10:00:00
 categories: java
 ---
 [http://www.javapractices.com/topic/TopicAction.do?Id=87](http://www.javapractices.com/topic/TopicAction.do?Id=87)
