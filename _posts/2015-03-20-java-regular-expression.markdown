@@ -4,7 +4,18 @@ title:  "Using Java Regular Expression"
 date:   2015-03-23 10:00:00
 categories: java
 ---
-[http://www.javapractices.com/topic/TopicAction.do?Id=87](http://www.javapractices.com/topic/TopicAction.do?Id=87)
+
+In this post, I want to present a simple use of [Java Regular Expression](http://docs.oracle.com/javase/tutorial/essential/regex/).
+
+Java regular expression is a very powerful tool for manipulating Strings. The usage can be found in many field (e.g. String Tokeniser, NLP).
+
+To start using regular expression, I recommand firstly understanding what is Regular Expression and find a [regular expression cheat sheet](http://www.rexegg.com/regex-quickstart.html). Then, it worth to try out by using Java regular expression library.
+
+![regex]({{ site.url }}/assets/regex.png)
+
+
+Here is an expamle, the example is from [http://www.javapractices.com/topic/TopicAction.do?Id=87](http://www.javapractices.com/topic/TopicAction.do?Id=87)
+
 {% highlight java %}
 import java.util.regex.*;
 
@@ -84,3 +95,25 @@ public final class RegularExpressions {
 } 
 
 {% endhighlight %}
+
+The above example is trying to use Java Regular example library to parse the package path such as java.lang.String. To understand the regular expression ```( (?:\\w|\\.)+ ) \\.( [A-Z](?:\\w)+ )```, we should firstly find out the pattern of the package path. Java package path is start with a small word followed by one or more word as the root level name. Then followed by a dot which is the path separator. Then there are one or more directory which is same structure as we described before. Therefore, we can get the first group of our regular expression:
+
+{% highlight java %}
+( (?:\\w|\\.)+ ) \\. // pattern - package path
+{% endhighlight %}
+
+The ```((?:\\w|\\.)+)``` will catch the package name in the group and the path separator ```.``` will be omitted. 
+
+Secondly, we need parse the class name. As Java class name is all start in captial as part of java name convention, we will parse all the java class name as a captial word followed by any other words. To be noticed, ```\\w``` is the shortage of ```[a-z][A-Z]```. Therefore, we get the pattern:
+
+{% highlight java %}
+( [A-Z](?:\\w)+ ) // pattern - class name
+{% endhighlight %}
+
+The ```group``` in java ```Pattern.class``` is great idea to get the value from a string. Each group is in between of extra round brackets. In the above example, we can view the pattern of ```( (?:\\w|\\.)+ ) \\.( [A-Z](?:\\w)+ )``` as (group1: pattern - package path without "." ).(group2: pattern - class name). 
+
+There are few tips for newbie:
+
+1. in Java, to use the regular expression such as \w, **you have to use a extra backslash for it ```\\w```**. The reson is that '\' is a Java reserved character for String.class (e.g. "\n", "\t", "\"). However, we want the string to be present like '\w'. Therefore, we use a backslash to escape the special character '\' itself. We will write something like ```"\\w\\W\\D"``` in our regular expression string. To use '\' in regular expression, it has to be ```"\\\\"```. Therefore, when you see a pattern like "https:\\\\\\\\(\\w)+". Don't panic, this's trying to parse a url pattern.
+
+2. to use the group, you have to call the method ```matches()``` on your Matcher object. Otherwise, you will found a error says the group is not found when using ```mathcer.group(\*your group number here*\)```.
