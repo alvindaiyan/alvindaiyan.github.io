@@ -11,9 +11,6 @@ Java regular expression is a very powerful tool for manipulating Strings. The us
 
 To start using regular expression, I recommand firstly understanding what is Regular Expression and find a [regular expression cheat sheet](http://www.rexegg.com/regex-quickstart.html). Then, it worth to try out by using Java regular expression library.
 
-![regex]({{ site.url }}/assets/regex.png)
-
-
 Here is an expamle, the example is from [http://www.javapractices.com/topic/TopicAction.do?Id=87](http://www.javapractices.com/topic/TopicAction.do?Id=87)
 
 {% highlight java %}
@@ -117,3 +114,6 @@ There are few tips for newbie:
 1. in Java, to use the regular expression such as \w, **you have to use a extra backslash for it ```\\w```**. The reson is that '\' is a Java reserved character for String.class (e.g. "\n", "\t", "\"). However, we want the string to be present like '\w'. Therefore, we use a backslash to escape the special character '\' itself. We will write something like ```"\\w\\W\\D"``` in our regular expression string. To use '\' in regular expression, it has to be ```"\\\\"```. Therefore, when you see a pattern like "https:\\\\\\\\(\\w)+". Don't panic, this's trying to parse a url pattern.
 
 2. to use the group, you have to call the method ```matches()``` on your Matcher object. Otherwise, you will found a error says the group is not found when using ```mathcer.group(\*your group number here*\)```.
+
+
+![regex]({{ site.url }}/assets/regex.png)
