@@ -167,7 +167,7 @@ void onActivityResult(int requestcode, int resultCode, Intent data){}
 </intent-filter>
 {% endhighlight %}
 
-#### Intents as desired operations
+### Intents as desired operations
 1. Intents provide a flexible language for specifying operations to be performed
   - e.g. pick a contact or take a photo
 2. intent is constructed by one component that wants some work done
@@ -206,6 +206,7 @@ void onActivityResult(int requestcode, int resultCode, Intent data){}
 
 
 ## Permissions
+
 1. android permissions 
   - android protects resource and data with permissions
   - used to limit access to 
@@ -224,6 +225,7 @@ void onActivityResult(int requestcode, int resultCode, Intent data){}
   - app specify permissions use through a <uses-permission> tag
   - users must accept these permissions before an application can be installed: 
   {% highlight xml %}
+
   <manifest ...>
     <uses-permission android:name=”android.permission.CAMERA” />
     <uses-permission android:name=”android.permission.INTERNET” />
@@ -231,10 +233,11 @@ void onActivityResult(int requestcode, int resultCode, Intent data){}
 </manifest>
   {% endhighlight %}
 
-#### component permissions & permissions-related APIs
+### Component permissions & permissions-related APIs
   - individual components can set their own permissions, restricting which other components can access them
   - component permissions take precedence over application-level permissions
     - activity permissions : rastrigin which components can start the associated activity, checked with startActivity(), startActityForResult()
     - service permissions: checked within context.startServices(), context.stopService(), context.bindService()
     - BroadcastReceviver permissions
     - ContentProvider permissions
+
