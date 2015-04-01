@@ -15,7 +15,7 @@ layout: default
           <div class="panel-heading">
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           </div>
-        {% assign tag_color = 'label label-primary' %}
+        {% assign tag_color = 'label label-default' %}
         
         {% if post.categories contains 'design_pattern' %}
           {% assign tag_color = 'label label-danger' %}
@@ -30,6 +30,10 @@ layout: default
         {% endif%}
 
         {% if post.categories contains 'algorithm' %}
+          {% assign tag_color = 'label label-primary' %}
+        {% endif%}
+
+        {% if post.categories contains 'android' %}
           {% assign tag_color = 'label label-success' %}
         {% endif%}
         <div class="panel-body">
@@ -59,11 +63,6 @@ layout: default
 
 <!-- </div> -->
 </div>
-
-
-
-
-
 {% if paginator.total_pages > 1 %}
 <nav>
   <ul class="pagination">
@@ -91,7 +90,6 @@ layout: default
     <li><span>Next &raquo;</span></li>
   {% endif %}
 {% endif %} 
-
   </ul> 
 </nav>
 
