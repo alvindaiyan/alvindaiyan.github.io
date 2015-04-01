@@ -36,10 +36,9 @@ layout: default
         {% if post.categories contains 'android' %}
           {% assign tag_color = 'label label-success' %}
         {% endif%}
-        <div class="panel-body">
-        tags: <span class='{{tag_color}}'>{{ post.categories }}</span>
-        <hr width= 30%/>
 
+        <div class="post-tag">tags: <span class='{{tag_color}} '>{{ post.categories }}</span></div>
+        <div class="panel-body">
         {{ post.excerpt }}
       
       {% assign foundImage = 0 %}
