@@ -202,3 +202,51 @@ pre {
         }
     }
 }
+
+
+.label-java {
+  background-color: #f0ad4e;
+}
+
+.label-java[href]:hover,
+.label-java[href]:focus {
+  background-color: #ec971f;
+}
+
+
+.label-android {
+  background-color: #5cb85c;
+}
+
+.label-android[href]:hover,
+.label-android[href]:focus {
+  background-color: #449d44;
+}
+
+
+.label-algorithm {
+  background-color: #FF8533;
+}
+
+.label-algorithm[href]:hover,
+.label-algorithm[href]:focus {
+  background-color: #FF5C33;
+}
+
+.label-go {
+  background-color: #5bc0de;
+}
+
+.label-go[href]:hover,
+.label-go[href]:focus {
+  background-color: #499AB2;
+}
+
+.label-design_pattern {
+  background-color: #CC66FF;
+}
+
+.label-design_pattern[href]:hover,
+.label-design_pattern[href]:focus {
+  background-color: #8A5CE6;
+}

@@ -9,7 +9,7 @@ permalink: /about/
 
  **Date of Birth:** 27 December, 1989
 
- **Visa Status:** Resident Visa
+ **Visa Status:** NZ Resident
 
  **github:** [alvindaiyan](https://github.com/alvindaiyan)
 
@@ -24,38 +24,125 @@ My aim is to work as a software architect, software developer or software tester
 
 ## Technical Skills
 
-Skill Description       | Experience            | Level
------------------------ | --------------------- | -------------
-Java (J2SE, J2EE)       | Paid                  | Advance 
-Artificial Intelligence | Practical 			| Advance 
-Unix/Linux 				| Practical 			| Intermediate 
-Go 						| Practical 			| Intermediate 
-Android Development 	| Academic 				| Basic
-C 						| Practical 			| Basic 
-C\# 					| Paid 					| Basic 
-Python 					| Practical 			| Basic 
-Scala 					| Practical 			| Basic  
+<table class="table">
+<thead>
+<tr>
+	<td>Skill Description</td>
+	<td>Experience</td>
+	<td>Level</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Java (J2SE, J2EE)</td>
+	<td>Paid</td>
+	<td>Advance</td>
+</tr>
+<tr>
+	<td>Artificial Intelligence</td>
+	<td>Practical</td>
+	<td>Advance</td>
+</tr>
+<tr>
+	<td>Go</td>
+	<td>Practical</td>
+	<td>Advance</td>
+</tr>
+<tr>
+	<td>Unix/Linux 	</td>
+	<td>Practical</td>
+	<td>Intermediate</td>
+</tr>
+<tr>
+	<td>Android Development</td>
+	<td>Practical</td>
+	<td>Intermediate</td>
+</tr>
+<tr>
+	<td>C</td>
+	<td>Practical</td>
+	<td>Basic</td>
+</tr>
+<tr>
+	<td>C#</td>
+	<td>Paid</td>
+	<td>Basic</td>
+</tr>
+<tr>
+	<td>Python</td>
+	<td>Practical</td>
+	<td>Basic</td>
+</tr>
+<tr>
+	<td>Scala</td>
+	<td>Practical</td>
+	<td>Basic</td>
+</tr>
 
-Database Developement	| 						| 
------------------------ | --------------------- | -------------
-SQL Server 				| Practical 			| Intermediate 
-MySql 					| Practical 			| Intermediate  
-PostgreSql 				| Paid 					| Intermediate  
-Cassandra 				| Paid 					| Intermediate 
-XML 					| Practical 			| Intermediate 
+<tr>
+	<td>SQL Server</td>
+	<td>Practical</td> 			
+	<td>Intermediate </td>
+</tr>
+<tr>
+	<td>MySql</td>
+	<td>Practical</td>
+	<td>Intermediate</td>  
+</tr>
+<tr>
+	<td>PostgreSql</td> 				
+	<td>Paid</td>					
+	<td>Intermediate</td>  
+</tr>
+<tr>
+	<td>Cassandra</td> 				
+	<td>Paid</td> 					
+	<td>Intermediate</td> 
+</tr>
+<tr>
+	<td>XML</td> 					
+	<td>Practical</td> 			
+	<td>Intermediate</td> 	
+</tr>
 
-Web Development   		| 						| 
------------------------ | --------------------- | -------------
-SpringMVC, JAX-RS 		| Paid 					| Basic 
-HTML & CSS 				| Paid 					| Basic 
-Javascript & JQuery 	| Paid 					| Intermediate 
-CSS 					| Academic 				| Intermediate  
-JQuery 					| Practical 			| Intermediate 
-JSP 					| Paid 					| Intermediate 
+<tr>
+	<td>SpringMVC, JAX-RS</td>
+	<td>Paid</td>
+	<td>Basic</td> 
+</tr>
+<tr>
+	<td>HTML & CSS</td>
+	<td>Paid</td>
+	<td>Basic</td> 
+</tr>
+<tr>
+	<td>Javascript & JQuery</td>
+	<td>Paid</td>
+	<td>Intermediate</td> 
+</tr>
+<tr>
+	<td>CSS</td>
+	<td>Academic</td>
+	<td>Intermediate</td>  
+</tr>
+<tr>
+	<td>JQuery</td>
+	<td>Practical</td>
+	<td>Intermediate</td> 
+</tr>
+<tr>
+	<td>JSP</td>
+	<td>Paid</td>
+	<td>Intermediate</td> 
+</tr>
+<tr>
+	<td>Agile Methodology</td> 		
+	<td>Practical</td> 			
+	<td>Intermediate</td>
+</tr>
+</tbody>	
+</table>
 
-Project Management 		| 						|
------------------------ | --------------------- | -------------
-Agile Methodology 		| Practical 			| Intermediate 
 
 ## Education
 **2009-2013** | Bachelor of Engineering (Hons) in ***Sofware Engineering***<br/>
@@ -69,16 +156,20 @@ Agile Methodology 		| Practical 			| Intermediate
 
 ## Work Experience
 
-**Nov 2013-Current** | Software Engineer at [Syl Research Ltd.](www.sylresearch.co.nz), Wellington <br/>
-*Enterprise Search Engine Using **Java***
-
-- Developed new Java agents for IBM LotusNotes, and used commercially. 
-- Developed new Java agents for Google Drive, Evernote, Dropbox and Twitter, and used internally.
-- Developed a module (Java,  [Apache POI](http://poi.apache.org/)) for extracting embedded documents from MS Word, Excel and Powerpoint.This is used by syl 2.1, and syl 2.5 platform.
-- Main Developer for WordPerfect Document parsing function and used by syl 2.1 and syl 2.5 platform.
-- Developed a RESTful API (JAX-RS using Jersey) for metadata services in syl 2.1 and syl 2.5 platform.
-- Researched on topic related to Optimal Character Recognition.
-
+<div class="panel panel-default">
+  <div class="panel-body">
+    <b>Nov 2013-Current</b> | Software Engineer at <a href="www.sylresearch.co.nz">Syl Research Ltd.</a>, Wellington <br/>
+	<i>Enterprise Search Engine Using <b>Java</b></i>
+	<ul>
+	<li>Developed new Java agents for IBM LotusNotes, and used commercially. </li>
+	<li>Developed new Java agents for Google Drive, Evernote, Dropbox and Twitter, and used internally.</li>
+	<li>Developed a module (Java,  <a href="http://poi.apache.org/">Apache POI</a> for extracting embedded documents from MS Word, Excel and Powerpoint.This is used by syl 2.1, and syl 2.5 platform.</li>
+	<li>Main Developer for WordPerfect Document parsing function and used by syl 2.1 and syl 2.5 platform.</li>
+	<li>Developed a RESTful API (JAX-RS using Jersey) for metadata services in syl 2.1 and syl 2.5 platform.</li>
+	<li>Researched on topic related to Optimal Character Recognition.</li>
+	</ul>
+  </div>
+</div>
 
 **Nov 2011-Feb 2012** | Software Engineer at [Beijing ShenZhou Aerospace Software Technology Co., Ltd](http://www.bjsasc.com/), Beijing, China<br/> 
 *Knowledge based engineering management project for China Aerospace Science & Industry Corp (CASIC)*
@@ -88,29 +179,38 @@ Agile Methodology 		| Practical 			| Intermediate
 - Research on the related algorithm such as the Genetic Programming, Support Vector Machine, Bayesian Network for data mining, search engine and Auto error detection function.
 - Research on Java implementation plan for using AI algorithms (Genetic algorithm) to achieve a particular objective.
 
+<div class="panel panel-default">
+  <div class="panel-body">
+	<b>Aug 2013-Jan 2014</b> | Software Developer (Part-time) at <a href="http://pricetech.co.nz/">PriceTech</a> Wellington <br/>
+	<i>Web Based Applications Using <b>.Net</b></i> <br/>
 
-**Aug 2013-Jan 2014** | Software Developer (Part-time) at [PriceTech](), Wellington <br/>
-*Web Based Applications Using **.Net*** <br/>
+	<ul>
+	<li>Maitenance of existing Pricetech Client Applications.</li>
+	<li>Software developement using C# and ASP.Net for the web-based price application.</li>
+	<li>Software requirements gathering, including meeting clients, software requirements design.</li>
+	</ul>
+  </div>
+</div>
 
-- Maitenance of existing Pricetech Client Applications.
-- Software developement using C\# and ASP.Net for the web-based price application.
-- Software requirements gathering, including meeting clients, software requirements design.
-
-
-**Nov 2012-Feb 2013** | Research Assistant at [Victoria University of Wellington](), Wellington <br/>
+**Nov 2012-Feb 2013** | Research Assistant at [Victoria University of Wellington](http://www.victoria.ac.nz/), Wellington <br/>
 **Published Paper:** [PSO for Feature Construction and Binary Classification](http://dl.acm.org/citation.cfm?id=2463376) <br/>
 *Evolutionary Computation for Data Manipulation and Using Particle Swarm Optimisation (PSO) for Feature Construction* 
 
 - Research and Design on the related algorithm for feature construction using PSO which is one of the very first research in this area. 
 - Implementing the designed algorithm in Java and Recording and analysing the experiment results.
 
-**Mar 2012-July 2013** | Tutoring at [Victoria University of Wellington](), Wellington
+<div class="panel panel-default">
+  <div class="panel-body">
+	<b>Mar 2012-July 2013</b> | Tutoring at <a href="http://www.victoria.ac.nz/">Victoria University of Wellington</a>, Wellington
+	<ul>
+	<li>Assignment marking and Tutoring on the Engineering 101, Computer Science 261 and Network Engineering 241 course.</li>
+	<li>Tutoring lab sessions attended by up to 40 students.</li>
+	<li>Running help desk for up to 20 students each week.</li>
+	</ul>
+  </div>
+</div>
 
-- Assignment marking and Tutoring on the Engineering 101, Computer Science 261 and Network Engineering 241 course.
-- Tutoring lab sessions attended by up to 40 students.
-- Running help desk for up to 20 students each week.
-
-**Feb 2012–June 2012** | Volunteer Software Engineer at [Habitat for Humanity](), Wellington <br/>
+**Feb 2012–June 2012** | Volunteer Software Engineer at [Habitat for Humanity](http://www.habitat.org.nz/), Wellington <br/>
 *Database system for storing the Habitat for Humanity project information*
 
 - Requirements analysis for the input data the customer wants to store into the system, how the customer wants to search the data.
