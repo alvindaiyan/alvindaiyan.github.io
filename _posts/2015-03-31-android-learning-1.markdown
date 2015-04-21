@@ -210,18 +210,18 @@ void onActivityResult(int requestcode, int resultCode, Intent data){}
 1. android permissions 
   - android protects resource and data with permissions
   - used to limit access to 
-    - user information - e.g. contacts
-    - cost-sensitive APIs- e.g. sms/mms
-    - system resource -  e.g. camara
+    1. user information - e.g. contacts
+    2. cost-sensitive APIs- e.g. sms/mms
+    3. system resource -  e.g. camara
   - permission are represented as strings
   - in androidmanifest.xml, apps declare the permissions
   - they use the permissions themselves
   - they require of other components to use the permission to invoke themselves
 2. defining & using application permissions
   - defining permissions:
-    - suppose your application a privileged/dangerous operations
-    - use the tag ```<permission ...></permission>``` to declare a permission
-    - should be include this permission with the application
+    1. suppose your application a privileged/dangerous operations
+    2. use the tag ```<permission ...></permission>``` to declare a permission
+    3. should be include this permission with the application
   - app specify permissions use through a <uses-permission> tag
   - users must accept these permissions before an application can be installed: 
   {% highlight xml %}
@@ -236,8 +236,49 @@ void onActivityResult(int requestcode, int resultCode, Intent data){}
 ### Component permissions & permissions-related APIs
   - individual components can set their own permissions, restricting which other components can access them
   - component permissions take precedence over application-level permissions
-    - activity permissions : rastrigin which components can start the associated activity, checked with startActivity(), startActityForResult()
-    - service permissions: checked within context.startServices(), context.stopService(), context.bindService()
-    - BroadcastReceviver permissions
-    - ContentProvider permissions
+    1. activity permissions : rastrigin which components can start the associated activity, checked with startActivity(), startActityForResult()
+    2. service permissions: checked within context.startServices(), context.stopService(), context.bindService()
+    3. BroadcastReceviver permissions
+    4. ContentProvider permissions
+
+## The Fragment Class
+1. Support multiple ui panes/ user behaviors at the same time
+2. Single activity holds multiple fragments
+3. Represent a behavior / portion of UI within an activity
+4. Multiple fragments can be embedded in an activity to create a multi-pane ui
+5. A single fragment can be reused across multiple activities
+6. Fragment lifecycle:
+  - fragment lifecycle is coordinated with the lifecycle of its containing activity
+  - fragments have their own lifecycles and receive their own callbacks
+  - fragment lifecycle states
+    1. resumed: fragment is visible in the running activity
+    2. paused: another activity is in the foreground and has focus, containing activity is visible
+    3. stopped: the fragment is not visible
+  - lifecycle callback method:
+  - activity created : ```onAttach()```
+    1. fragment is first attached to its activity
+  - ```onCreate()```
+    1. initialize the fragment (don’t setup the ui)
+  - ```onCreateView()```
+    1. Fragment sets up & returns its user interface
+  - ```onActivityCreated()```
+    1. containing activity has completed onCreate() and the fragment has been installed
+  - (depend on the host activity lifecycle) activity started: ```onStart()```
+    1. hosting activity is about to become visible
+  - activity resumed: ```onResume()```
+    1. hosting activity about to become visible and ready for user interaction
+  - activity paused: ```onPause()```:
+    1. hosting activity is visible but not has focus
+  - activity stopped: ```onStop()```:
+  - activity destroyed: ```onDestroyView()```
+    1. view previously created by ```onCreateView()``` has been detached from the hosting activity
+  - ```onDestroy()```
+    1. fragment is no longer in use
+    2. typical actions:
+      - cleanup the fragment resources
+  - ```onDetach()```
+    1. fragment no longer attached to its activity
+    2. null out reference to the hosting activity
+
+
 
