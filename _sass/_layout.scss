@@ -9,6 +9,29 @@
     position: relative;
 }
 
+.gsc-option-menu-container, .gsc-inline-block{
+    box-sizing: content-box; 
+    line-height: normal;
+}
+
+input.gsc-input,
+.gsc-input-box,
+.gsc-input-box-hover,
+.gsc-input-box-focus,
+.gsc-search-button {
+    box-sizing: content-box; 
+    line-height: normal;
+}
+
+.gsc-control-cse {
+    padding: 0px 0px 0px 0px !important;
+}
+
+
+.gsc-control-cse-en {
+    padding: 0px 0px 0px 0px !important;
+}
+
 .site-title {
     font-size: 26px;
     line-height: 56px;

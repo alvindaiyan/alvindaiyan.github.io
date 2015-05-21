@@ -27,14 +27,22 @@
 
           </ul>
 
-          <ul class="nav navbar-nav navbar-right">
-            <li>                
-                  <form onsubmit="my_search_google()" >
-                    <div style="width:300px; margin-top:10px">
-                      <input type="text" id="my-google-search" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
-                    </div>
-                  </form>
-            </li>           
+          <ul class="nav navbar-nav navbar-right"  >
+            <li style="width:300px; margin-top:10px">
+                <script>
+                  (function() {
+                    var cx = '013695315936032225376:0yikuof1tvs';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                        '//cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                  })();
+                </script>
+                <gcse:search></gcse:search>
+            </li>
           </ul>
 
         </div><!--/.nav-collapse -->
