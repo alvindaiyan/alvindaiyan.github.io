@@ -7,6 +7,8 @@ categories: go
 
 [gRpc](http://www.grpc.io/) is a remote procedure call framework developed by Google. RPC is a alternative way to develop a web service compared with RESTful architecture. While, comparing gRpc with RESTful is not proper. The reason is gRpc is a framework with protobuf3 but RESTful is really just an architecture design of a web application. Therefore, you can find lots of article by googling "restful vs rpc" but not "restful vs grpc". In this post, I won't do more comparison.
 
+I did a small project to learn grpc which you can found at [goTalk2](https://github.com/alvindaiyan/goTalk2).
+
 ## gRpc
 
 ### proto
