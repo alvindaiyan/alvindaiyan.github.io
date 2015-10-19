@@ -65,6 +65,7 @@ jdbc.password=userpassword
 
 <li>
 Setup the mybatis configuration file <b>mybatis-config.xml</b> in <b>main/resources</b>
+<b>Note: we have set a alias which map UserInfo.java to User.</b>
 {% highlight xml %}
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE configuration
