@@ -171,7 +171,7 @@ My aim is to work as a software architect, software developer or software tester
   </div>
 </div>
 
-**Nov 2011-Feb 2012** | Software Engineer at [Beijing ShenZhou Aerospace Software Technology Co., Ltd](http://www.bjsasc.com/), Beijing, China<br/> 
+**Jan 2011-Feb 2012** | Software Engineer at [Beijing ShenZhou Aerospace Software Technology Co., Ltd](http://www.bjsasc.com/), Beijing, China<br/> 
 *Knowledge based engineering management project for China Aerospace Science & Industry Corp (CASIC)*
 
 - Help with requirements analysis for the functions of knowledge acquisition, assessment of the problem, revision and evaluation system.
