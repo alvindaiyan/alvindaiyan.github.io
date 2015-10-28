@@ -121,6 +121,11 @@ My aim is to work as a software architect, software developer or software tester
 	<td>Intermediate</td> 
 </tr>
 <tr>
+	<td>AngularJS</td>
+	<td>Practical</td>
+	<td>Intermediate</td> 
+</tr>
+<tr>
 	<td>CSS</td>
 	<td>Academic</td>
 	<td>Intermediate</td>  
