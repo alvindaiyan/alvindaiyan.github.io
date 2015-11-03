@@ -11,7 +11,8 @@ By doing this simple program, we can learn how to use Java reflection and mock a
 
 ## The code ##
 
-```java
+{% highlight java %}
+
 import java.lang.reflect.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -133,12 +134,13 @@ public class MockObject
 }
 
 
-```
+{% endhighlight %}
 
 
 ## The testing program: ##
 
-```java
+{% highlight java %}
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -164,7 +166,7 @@ public class MyObj
     }
 }
 
-```
+{% endhighlight %}
 
 
 ## result ##
