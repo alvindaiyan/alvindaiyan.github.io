@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Using Java Reflection to mock an object"
-date:   2015-08-31 10:00:00
+date:   2015-11-10 10:00:00
 categories: java
 ---
 
