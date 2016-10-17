@@ -1,96 +1,42 @@
 ---
-layout: default
+layout: page
+description: "好吃懒做，眼大肚小的程序员"
 ---
 
-<!-- This loops through the paginated posts -->
-<div class="home">
- <ul class="post-list">
 {% for post in paginator.posts %}
-
-  <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-          <div class="panel panel-default">
-
-        
-          <div class="panel-heading">
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </div>
-        {% assign tag_color = 'label label-default' %}
-        
-        {% if post.categories contains 'design_pattern' %}
-          {% assign tag_color = 'label label-design_pattern' %}
-        {% endif%}
-
-        {% if post.categories contains 'go' %}
-          {% assign tag_color = 'label label-go' %}
-        {% endif%}
-
-        {% if post.categories contains 'java' %}
-          {% assign tag_color = 'label label-java' %}
-        {% endif%}
-
-        {% if post.categories contains 'algorithm' %}
-          {% assign tag_color = 'label label-algorithm' %}
-        {% endif%}
-
-        {% if post.categories contains 'android' %}
-          {% assign tag_color = 'label label-success' %}
-        {% endif%}
-
-        <div class="post-tag">tags: <span class='{{tag_color}} '>{{ post.categories }}</span></div>
-        <div class="panel-body">
-        {{ post.excerpt }}
-      
-      {% assign foundImage = 0 %}
-      {% assign images = post.content | split:"<img " %}
-      {% for image in images %}
-        {% if image contains 'src' %}
-
-            {% if foundImage == 0 %}
-                {% assign html = image | split:"/>" | first %}
-                <img width=20% height=20% {{ html }} />
-                {% assign foundImage = 1 %}
-            {% endif %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
         {% endif %}
-      {% endfor %}
-      </div> 
-      <br/><br/>
-    </div>
-      </li>
-{% endfor %}
-</ul> 
-
-<!-- </div> -->
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:200 }}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
 </div>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
 {% if paginator.total_pages > 1 %}
-<nav>
-  <ul class="pagination">
-  <li>
+<ul class="pager">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a> 
-    {% else %}
-      <span>&laquo; Prev</span>
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
     {% endif %}
-  </li>
-
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <li class="active"><a href="javascript:void(0)">{{ page }}</a></li>
-    {% elsif page == 1 %}
-       <li><a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
-    {% else %}
-      <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
     {% endif %}
-  {% endfor %}
-
-  {% if paginator.next_page %}
-    <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
-  {% else %}
-    <li><span>Next &raquo;</span></li>
-  {% endif %}
-{% endif %} 
-  </ul> 
-</nav>
-
-
-
+</ul>
+{% endif %}
