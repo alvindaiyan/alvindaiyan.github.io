@@ -3,7 +3,7 @@ layout: post
 title:  "Factory Pattern Learning"
 date:   2015-02-16 15:12:25
 author:     "Yan"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-os-metro.jpg"
 catalog: true
 comments: true
 tags:
