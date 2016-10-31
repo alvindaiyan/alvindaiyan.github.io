@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Delegate Pattern Learning"
+title:  "代理模式 - proxy pattern"
 date:   2016-10-05 15:12:25
 author:     "Yan"
 header-img: "img/post-bg-2015.jpg"
