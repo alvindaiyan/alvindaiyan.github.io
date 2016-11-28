@@ -69,7 +69,7 @@ task wrapper (type: Wrapper) {
 
 ## Writing Simple Tasks
 
-Task:
+### Task:
 - code that grade executes
     - has a lifecycle
     - has properties
