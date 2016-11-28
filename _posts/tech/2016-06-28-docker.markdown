@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "Docker: What, Why and How"
+date:   2016-06-28 21:08:00
+author:     "Yan"
+header-img: "img/docker-banner2.jpg"
+catalog: true
+comments: true
+tags:
+    - devops
+---
+ 
+# Introduction
+
+Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications.
+
+Docker is build on Linux Container which is not a full operating system. Therefore, docker is much more lightweight than virtual machine.
+Also the overhead to start docker container is low. To compare docker and virtual machines, here is a screenshot from docker web site:
+
+docker.png
+![Image of Factory Pattern]({{ site.url }}/img/docker.png)
+
+I understand that virtual machine is a complete operating system running on the host operating system. VMs uses a program to virtualise the host’s hardware’s driver for building the virtual operating system on top of the host OS. This program is called Hypervisor here. Here we can see that each instance running on top of the hypervisor containing a complete OS. These OS can be GBs. And the kernel of each VM can be similar or exactly same. Therefore, starting a VM is costs and running multiple VM instance on same hosts wastes resources. 
+
+Docker (Container) can overcome most of the VM’s flaws. Docker is running on top Docker Engine which is similar to Hypervisor for running VMs. But Docker Engine is much more powerful than a HyperVisor. Docker containers can share the kernel through docker engine. This is because the kernel provides the neccessary infrastructure for the user application running from. Each docker container is isolated by linux namespaces (such as pid, net, ipc, mnt, uts, user etc).    
+
+## Reference:
+- [docker-core-technology-preview](http://www.infoq.com/cn/articles/docker-core-technology-preview)
+- [what-docker](https://www.docker.com/what-docker)
+
+# Docker Engine
+
+“Docker Engine runs on Linux to create the operating environment for your distributed applications. 
+
+At the core of the Docker platform is Docker Engine, a lightweight runtime and robust tooling that builds and runs your Docker containers. Docker Engine runs on Linux to create the operating environment for your distributed applications. The in-host daemon communicates with the Docker client to execute commands to build, ship and run containers.
+
+Docker Engine is one of the most rapidly growing open source projects on Github. The software is available as an open source download or with commercial support subscription.”
+
+## Reference:
+- [docker engine](https://www.docker.com/products/docker-engine)
+
+# Docker Registry and Docker Hub
+
+According to the docker official website, “the Registry is a stateless, highly scalable server side application that stores and lets you distribute Docker images.” This means, a docker registry is like a centre version control system such as subversion. A local image is a like the local repository you checked out from the svn. And the Registry is the remote server which maintain a list of your resources. A Docker hub is a public Docker Registry hosting by Docker.io. It’s like the Github to a software programmer. All open sourced docker images are maintained and shared through the DockerHub such as the ubuntu image, tomcat-8-jre7 image etc. 
+
+For a company, we would like to host our private Registry to manage the development and production release flow. This will be introduced later.
+
+## Reference:
+- [docker registry](https://docs.docker.com/registry/) 
+- [comparing four housted docker registries](http://rancher.com/comparing-four-hosted-docker-registries/)
+
+# Docker for Release Management
+
+Before we talk about release management, I want to spend a little time on understanding what is CI and CD. CI and CD are Continuous Integration and Continuous Deployment (or Continuous Delivery). CI usually means integrating, developing and testing within the development environment. CI is the fundamental of CD. Continuous Deployment and Continuous Delivery are different concept or say Continuous Delivery is part of what Continuous Deployment achieved. By doing Continuous Deployment, the release and deploy of product software is going to be part of the software development lifecycle. The consequence of doing Continuous Deployment is that:
+
+1. all code change will be go to the production daily
+2. there will be many production release everyday. 
+
+Continuous Delivery is to make production release and deployment flexible enough to suit the business needs. Therefore, to be a Continuous Deployment, Continuous Delivery has to be achieved.
+
+Then here is the problem now, how docker can be the solution of CI/CD? And here is the answer, we need a Deployment Pipeline. In this case, we are going to utilise docker to build up the Deployment Pipeline. 
+
+Here is the big picture: 
+
+￼![Image of Factory Pattern]({{ site.url }}/img/basic-docker-deploy-pipeline.png)
+
+The picture above is a very basic and common solution by using docker to build up a deployment pipeline. All the developer’s commit will be build to a docker image from the repository by a Continuous Integration (CI) system. Normally, there will be no restrict with what repository system or CI system you are using. But today, Git and Jenkins are the most popular open source solution for repository and CI system. Then the newly built docker image can be push to the docker registry to be ready to deploy to production server. And it’s a easy task to host your own docker registry either by a standalone software on a server or even running the docker registry as a docker image. Okay, DockerHub is also a good option to host your docker images. Once you have a running docker registry and at least one working images, the application server can search from the docker registry. The application/production server will pull and run the newest docker image from the docker registry to finish the pipeline. This is a basic but common deployment pipeline utilising docker. 
+
+## Reference:
+- [优雅地部署Docker](http://www.csdn.net/article/a/2014-06-18/15819053)
+- [Dployment Pipeline](http://martinfowler.com/bliki/DeploymentPipeline.html)
+
+# Docker for Data Container 
+
+One of the concerns to utilise docker on production is about the data storage problem. People are worried about the data loss if docker is crashed. In this case, docker provide a interesting mechanism called data container and data volume to secure your application data. The basic logic is mounting your data storage (data volume) through a data container to the docker container who needs the data. The physical address of your data can be different from the docker container, e.g. your docker engine host os or other external storage disk. 
+
+For example, we have a tomcat docker container running we call T1. T1 is hosting an application to do CRUD to a Postgres Sql database. The Postgres Sql will be run on a docker container called P1 where T1 will perform all its CRUD from P1. Then P1 will save its data to */var/lib/postgres/data* of P1 which mounted to the */var/lib/postgres/data* of the operating system which running docker engine through a docker volume V1. Therefore, even T1, V1 and P1 are completely removed, the data is still safely stored at your local operating system.
+
+## Reference:
+- https://docs.docker.com/engine/tutorials/dockervolumes/
+- http://ryaneschinger.com/blog/dockerized-postgresql-development-environment/
+
+
+# Docker Basics
+
+Heres are some useful tutorial links for docker, and I’m not going to repeat it in this article:
+- [Docker Documentation](https://docs.docker.com/)
+- [Deep Docker](http://www.infoq.com/cn/DockerDeep)
+
+
+# Conclusion
+
+Docker is a great Devops tool to automate production release and deployment, though docker is still very young and not widely used in most of companies. There is a bright future for docker or containers. Compare to most of VM technologies, docker is lightweight, fast, easy to learn and great for both development and deployment. Besides, we cannot ignore the ecosystem docker is trying to bring to us, not just docker registry. There are too many open source software which make docker a better place, such as clustering tools like docker compose, docker swarm, kubernetes. Or a docker cloud which you can just deploy your docker to the cloud. 
+
+
+
