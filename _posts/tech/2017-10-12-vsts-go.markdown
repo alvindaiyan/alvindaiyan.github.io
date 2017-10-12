@@ -14,11 +14,11 @@ tags:
 
 During the last couple of months, I've been trying very hard about using Go as the programming language for future projects. Recently, I've been challenged by our architect on the topic of using MS Visual Studio Team Service (VSTS) to build and deploy a Go project to Azure. After couple of hours googling, I've found several interesting blogs and articles about deploying projects to Azure by VSTS and [running go applications on azure app service](https://azure.microsoft.com/en-us/blog/running-go-applications-on-azure-app-service/). However, one critical part is missing, that is how to build and run tests of Go by VSTS pipeline?
 
-![docker docker]({{ site.url }}/img/docker-what-is-it.png)
-
 VSTS has great support, integration and extensions of azure since they all belong to MS family. On the language level, VSTS has great support for .Net, Java (Maven and Gradle) and Nodejs(yarn and npm), (or maybe Python). However, for any other languages such as Go, it will be hard to find any useful documentation to help you setup a build agent with all the tools you need to build your project.
 
 There is a silver bullet for all these language. Let's thanks the little cute blue whale - Docker. MS has not too bad support for Docker. So in this blog, I want to record how I use a docker container to build my Go projects.
+
+![docker docker]({{ site.url }}/img/docker-what-is-it.png)
 
 # How to
 
