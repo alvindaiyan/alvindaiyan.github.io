@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "CI/CD for Go project on Microsoft visual studio team searvice - the Build part"
+date:   2017-10-12 21:00:00
+author:     "Yan"
+header-img: "img/docker-banner2.jpg"
+catalog: true
+comments: true
+tags:
+    - devops
+---
+ 
+# Introduction
+
+During the last couple of months, I've been trying very hard about using Go as the programming language for future projects. Recently, I've been challenged by our architect on the topic of using MS Visual Studio Team Service (VSTS) to build and deploy a Go project to Azure. After couple of hours googling, I've found several interesting blogs and articles about deploying projects to Azure by VSTS and [running go applications on azure app service](https://azure.microsoft.com/en-us/blog/running-go-applications-on-azure-app-service/). However, one critical part is missing, that is how to build and run tests of Go by VSTS pipeline?
+
+![docker docker]({{ site.url }}/img/docker-what-is-it.png)
+
+VSTS has great support, integration and extensions of azure since they all belong to MS family. On the language level, VSTS has great support for .Net, Java (Maven and Gradle) and Nodejs(yarn and npm), (or maybe Python). However, for any other languages such as Go, it will be hard to find any useful documentation to help you setup a build agent with all the tools you need to build your project.
+
+There is a silver bullet for all these language. Let's thanks the little cute blue whale - Docker. MS has not too bad support for Docker. So in this blog, I want to record how I use a docker container to build my Go projects.
+
+# How to
+
+1. First of all, you need a [Go project](https://golang.org/doc/install) and a [VSTS](https://www.visualstudio.com/team-services/) account. At this stage, I've pushed my project into the Git repository in VSTS.
+2. Now, when you run `go build`, your project will be build in your local.
+3. Choose a dependency management tool for your Go project. In my project, I've used [dep](https://github.com/golang/dep). Although this is the tool from Go language, it's still not the offical tool for Go dependency management. Don't worry about install this in your local if you are not going to be the developer of your Go projects.
+4. So far so good, but all of above is the preperation about our project. Oh, and of course, you need have Docker on your local.
+5. For now, you really want to run the build process with docker from your local before putting them into the build pipeline. The Docker image we are going to use is the offical [Go image](https://hub.docker.com/_/golang/) and I'm using the latest but it's really up to you.
+6. The basic idea is to create a container with all tools needed for Go and mount the project folder to the docker container as a volume. Then build from their. By doing so, you can run the following docker command from the project root:
+
+    ```
+    docker run --rm -v $(pwd):/go/src/YOUR/PROJECT/ROOT -w /go/src/YOUR/PROJECT/ROOT/ golang:latest sh -c “wget -L https://github.com/golang/dep/releases/download/v0.3.1/dep-linux-amd64 -O dep-linux-amd64;chmod a+x dep-linux-amd64;./dep-linux-amd64 ensure;go build -o ./target/app.exe PATH/TO/main.go”
+    ```
+
+    So what I've learnt from above? 
+
+    - we mount the current location `$(pwd)` to the `$GOPATH` location of the docker image. Following is the Go env of the docker image:
+
+    ```
+        GOARCH="amd64"
+        GOBIN=""
+        GOEXE=""
+        GOHOSTARCH="amd64"
+        GOHOSTOS="linux"
+        GOOS="linux"
+        GOPATH="/go"
+        GORACE=""
+        GOROOT="/usr/local/go"
+        GOTOOLDIR="/usr/local/go/pkg/tool/linux_amd64"
+        GCCGO="gccgo"
+        CC="gcc"
+        GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build212641055=/tmp/go-build -gno-record-gcc-switches"
+        CXX="g++"
+        CGO_ENABLED="1"
+        CGO_CFLAGS="-g -O2"
+        CGO_CPPFLAGS=""
+        CGO_CXXFLAGS="-g -O2"
+        CGO_FFLAGS="-g -O2"
+        CGO_LDFLAGS="-g -O2"
+        PKG_CONFIG="pkg-config"
+    ```
+
+    - when using `-w` (working directory) command of Docker, the value has to be end with `/` otherwise it will not working.
+    - the result downloaded from the dep link is a binary file not deb file. So there is no need to install it, we just need give the executable rights to the file and run it. 
+    - I've put the result into `target/` folder for future use.
+    - once you've made the command work, you will want to delete all the downloaded and generated files such as `dep-linux-amd64`, and `vendors/` folder.
+    - it's easy to add any other command in to the shell string such as run the unit tests of go and so on. Besides, it's easy to have the commands in a sh file and commit to the git repo for better maintain and development.
+
+7. if you've figured out the command you looking for, then now all we need is to run the same process on the pipeline. The plugin I'm using is the Docker extension developed by Microsoft. It can be easily found from the marketplace of VSTS. And here, my VSTS build pipeline configuarion:
+
+    ![docker docker]({{ site.url }}/img/build-vsts-golang.png)
+
+    - if we leave the docker registry connection to blank, it will automatically use Dockerhub as the docker registry
+    - I'm building against the Windows IIS server, so just build a .exe file from Go by setting the GOOS and GOARCH. Details can be found at [here](https://github.com/golang/go/wiki/WindowsCrossCompiling).
+    - You must untick `Run in Background` checkbox because we want see the build output
+
+8. Now, this is our build agent with the provided pipeline. I'm not going to discuss the deploy part since we've the .exe file. You can find futher detail in this [blog](https://docs.microsoft.com/en-us/vsts/build-release/apps/).
+
+# Conclusion
+
+In Conclusion, these method is not just for VSTS, it can be used by any CI/CD tools with Docker support. Though, I noticed the performance of the build isn't satisfying me but it's better than nothing.
