@@ -3,7 +3,7 @@ layout: post
 title:  "Java并发回炉再造之Oracle文档01"
 date:   2018-05-30 21:08:00
 author:     "Yan"
-header-img: "img/docker-banner2.jpg" # todo
+header-img: "img/study-hard.jpg" # todo
 catalog: true
 comments: true
 tags:
