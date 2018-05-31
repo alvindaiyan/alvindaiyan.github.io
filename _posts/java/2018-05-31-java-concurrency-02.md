@@ -191,7 +191,9 @@ Atomic代表了要么发生要么不发生。只有当其完成执行之后才�
 - 被volatile修饰的变量的读和写也都是atomic的，包括long和doble
 
 ```
-需要注意的是，memroy consistency errors(mce)仍然有可能发生。但是使用volatile可以极大的降低mce发生的可能性。
+需要注意的是，memroy consistency errors(mce)仍然有可能发生。
+
+但是使用volatile可以极大的降低mce发生的可能性。
 ```
 
 使用atomic variables比synchronized要更加有效。但需要开发者注意mce的发生。
