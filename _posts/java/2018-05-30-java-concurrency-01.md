@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Java并发回炉再造之Oracle文档01"
+title:  "Java并发回炉再造之Oracle文档一"
 date:   2018-05-30 21:08:00
 author:     "Yan"
-header-img: "img/study-hard.jpg" # todo
+header-img: "img/study-hard.jpg"
 catalog: true
 comments: true
 tags:
