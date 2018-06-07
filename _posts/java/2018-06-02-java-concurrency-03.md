@@ -19,7 +19,8 @@ tags:
 ## Deadlock
 
 ```
-Deadlock describes a situation where two or more threads are blocked forever, waiting for each other
+Deadlock describes a situation where two or more threads are blocked forever, 
+waiting for each other
 ```
 
 一下是一个简单死锁事例。当alphonse和gaston需要执行bowback时，他们都在等待对方线程解锁资源。由此产生死锁。
@@ -101,7 +102,7 @@ public synchronized void guardedJoy() {
 {% endhighlight %}
 
 ```
-wait方法应该在一个loop里出发。
+wait方法应该在一个loop里触发。
 ```
 
 wait方法也可以被interrupted，并且抛出一个InterruptedEception。
@@ -117,7 +118,9 @@ public synchronized notifyJoy() {
 
 
 ```
-notify vs notifyAll: notify后，只有一个线程会被唤醒。所有线程需竞争锁来被唤醒，因此不能确定那个线程会被执行。notifyAll后，所有在等待锁的线程都会被唤醒。
+notify vs notifyAll: notify后，只有一个线程会被唤醒。
+所有线程需竞争锁来被唤醒，因此不能确定那个线程会被执行。
+notifyAll后，所有在等待锁的线程都会被唤醒。
 ```
 
 生产者消费者模式是一个典型的Guarded Block的应用场景。一下是一个简易的生产者消费者实现。
