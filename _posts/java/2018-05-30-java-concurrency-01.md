@@ -124,7 +124,7 @@ public class SleepMessages {
 
 ### Thread.interrupt & Thread.interrupted
 
-Thread.interrupt是用来干扰当前线程停止目前的任务，做别的任务。比如说，当当前线程正在执行Thread.sleep时，Thread.interuppt会停止线程休眠状态并继续执行下一个任务。一下代码是一个简单的实现
+Thread.interrupt是用来干扰当前线程停止目前的任务，做别的任务。比如说，当当前线程正在执行Thread.sleep时，Thread.interuppt会停止线程休眠状态并继续执行下一个任务。以下代码是一个简单的实现
 
 {% highlight java %}
 
