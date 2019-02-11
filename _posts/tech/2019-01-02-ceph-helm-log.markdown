@@ -282,6 +282,14 @@ There is no extra configuration needed to be done after installing rbd or ceph-c
 
 Install `ceph-common` package on to your host machine which has the ceph-mon and ceph-mgr running is all you need.
 
+{% highlight bash %}
+#!/bin/bash
+
+yum install python-rbd
+yum install ceph-common
+{% endhighlight %}
+
+
 # 6. Test the Ceph cluster
 
 In order to tell if the ceph cluster is working or not, we can create a pvc and mount it to a pod:
