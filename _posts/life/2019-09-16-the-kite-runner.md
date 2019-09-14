@@ -3,7 +3,7 @@ layout: post
 title:  "那个为你千千万万遍的人"
 date:   2019-09-16 13:07:00
 author:     "Yan"
-header-img: "img/2508-htacqwv4015678.jpg"
+header-img: "img/KR_122x84.jpg"
 catalog: true
 comments: true
 tags:
