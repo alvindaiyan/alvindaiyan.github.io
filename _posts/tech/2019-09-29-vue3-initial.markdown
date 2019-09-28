@@ -188,6 +188,7 @@ added 7 packages in 10.502s
 ```
 ➜  super-vue git:(master) ✗ npm install vuex --save
 ➜  super-vue git:(master) ✗ npm install moment -S
+➜  super-vue git:(master) ✗ npm install axios -S
 ➜  super-vue git:(master) ✗ npm install vue-analytics -S
 ```
 
