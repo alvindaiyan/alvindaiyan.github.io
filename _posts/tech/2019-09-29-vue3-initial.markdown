@@ -3,7 +3,7 @@ layout: post
 title:  "Vuejs 3 初探"
 date:   2019-09-28 22:16:00
 author:     "Yan"
-header-img: "img/the_dark_times_are_coming_by_msdudettes-d5m99ns.jpg"
+header-img: "img/home-beijign.jpeg"
 catalog: true
 comments: true
 tags:
