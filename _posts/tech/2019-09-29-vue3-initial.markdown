@@ -206,7 +206,7 @@ vue大体是怎么写怎么工作的我就不赘述了，vue的文档非常详�
 
 ### Vuex可以加入namespace了
 
-不知道是不是我鼓楼寡闻，之前我用vuex的时候都是直接commit来调用action。现在通过namespace，可以直接使用action的path来调用了
+不知道是不是我孤陋寡闻，之前我用vuex的时候都是直接commit来调用action。现在通过namespace，可以直接使用action的path来调用了
 
 {% highlight javascript %}
 created() {
