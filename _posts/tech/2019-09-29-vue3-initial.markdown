@@ -199,3 +199,19 @@ added 7 packages in 10.502s
 
 至此，项目初期需要的依赖都安装完毕，接下来就可以痛快的码代码了。
 
+# 写代码时的几个发现
+
+vue大体是怎么写怎么工作的我就不赘述了，vue的文档非常详尽。我写几点我的体会。
+
+1. Vuex可以加入namespace了
+
+不知道是不是我鼓楼寡闻，之前我用vuex的时候都是直接commit来调用action。现在通过namespace，可以直接使用action的path来调用了
+
+{% highlight javascript %}
+created() {
+    this.$store.dispatch('items/fetchAll')
+  },
+{% endhighlight %}
+
+2. Component不用写name了，感觉开发起来清爽很多，不用再担心名字，文件名等不统一了。
+
