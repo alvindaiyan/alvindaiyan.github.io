@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Vuejs 3 初探"
+title:  "Vuejs CLI 3  初探"
 date:   2019-09-28 22:16:00
 author:     "Yan"
 header-img: "img/home-beijign.jpeg"
@@ -11,7 +11,7 @@ tags:
 ---
 
 今天恰好有个小项目要重构一下之前一个前端项目，决定重新熟悉一下Vuejs。之前用过一些vuejs 1.x和2.x，趁着次机会
-熟悉一下vuejs 3。
+在vuejs 3之前，先学习一下vuejs CLI 3。
 
 # TL；DR
 
@@ -19,7 +19,7 @@ tags:
 
 # 重新安装/升级本地依赖
 
-我本地之前安装的是nvm，所以先选择vuejs 3适用的npm和nodejs环境：
+我本地之前安装的是nvm，所以先选择适用的npm和nodejs环境：
 
 ```
 ➜  Dev nvm use v10.0.0
