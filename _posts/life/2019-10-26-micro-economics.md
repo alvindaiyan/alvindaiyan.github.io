@@ -3,7 +3,7 @@ layout: post
 title:  "Micro-economics for beginers - part one"
 date:   2019-10-20 22:00:00
 author:     "Yan"
-header-img: "img/microeconomics.png"
+header-img: "img/home-bg-2.png"
 catalog: true
 comments: true
 tags:
